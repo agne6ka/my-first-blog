@@ -1,0 +1,26 @@
+<html>
+{% load staticfiles %} 
+{# komentarze tak się dodaje w django html #}
+{# funkcja static powoduje, że genetują nam się urlki #} 
+
+<head>
+    <title>Moja pierwsza strona w Django</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+</head>
+<body>
+            <div class="page-header"><h1> Witaj na mojej stronie </h1></div>
+            <div><img class="img-responsive center-block" src="http://xgk.pl/1400/220/strawberry"></div>
+            <div><h2>Inspired by: <a href="http://djangogirls.org">Django Girls Blog</a></h2></div>
+            </br>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
